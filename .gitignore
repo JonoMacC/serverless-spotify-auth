@@ -5,11 +5,16 @@
 /.pnp
 .pnp.js
 
+# environment variables
+.env
+
 # testing
 /coverage
 
 # production
 /build
+/functions-build
+/.netlify
 
 # misc
 .DS_Store

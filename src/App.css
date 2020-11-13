@@ -20,12 +20,91 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 1.25rem;
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+.App-button {
+  background: #00b16d;
+  color: white;
+  padding: 8px 24px;
+  font-size: 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.App-button:disabled {
+  opacity: 0.3;
+}
+
+.List-horiz {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.List-horiz > * {
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.Token-table {
+  background: #3d4350;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
+  padding: 24px 16px;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 90vw;
+  max-width: 900px;
+  text-align: left;
+  overflow: hidden;
+  margin: 24px auto;
+}
+
+.Token-table h2 {
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.Token-table p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.Token-row {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+}
+
+.Token-row-title-col {
+  width: 8rem;
+  margin-right: 1rem;
+}
+
+.Token-row-body-col {
+  max-width: calc(900px - 32px - 9rem);
 }
 
 @keyframes App-logo-spin {

@@ -6,4 +6,3 @@
 [template.environment]
   REACT_APP_CLIENT_ID = "your Spotify app client ID"
   REACT_APP_CLIENT_SECRET = "your Spotify app client secret"
-  CI = ""

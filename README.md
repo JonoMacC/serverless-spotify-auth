@@ -34,6 +34,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## Deploy
 
 <br />
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/JonoMacC/fast-tracks">
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/JonoMacC/serverless-spotify-auth">
 <img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
 </a>

@@ -1,8 +1,12 @@
-# Serverless Authorization Code Flow with Netlify and the Spotify API
+# Serverless Spotify Auth
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d33b42c0-fb45-4221-b0b9-32c61dd6e711/deploy-status)](https://app.netlify.com/sites/serverless-spotify-auth/deploys)
 
-This project demonstrates OAuth authentication via the Authorization Code Flow for the [Spotify Web API](https://developer.spotify.com/documentation/web-api/) using Netlify serverless functions. In essence, the [Spotify Web API example](https://github.com/spotify/web-api-auth-examples) has been adapted to use Netlify functions on the backend and [Create React App](https://github.com/facebook/create-react-app) on the frontend.
+This project demonstrates OAuth 2.0 authentication via the Authorization Code Flow for the [Spotify Web API](https://developer.spotify.com/documentation/web-api/) using Netlify serverless functions. In essence, the [Spotify Web API example](https://github.com/spotify/web-api-auth-examples) has been adapted to use Netlify functions on the backend and [Create React App](https://github.com/facebook/create-react-app) on the frontend.
+
+## Motivation
+
+While there are many references and examples for authentication flows in React, these tend to have numerous dependencies and provide little to no guidance for adoption within a serverless framework. Netlify's own documentation and examples for serverless functions contain inconsistencies and are often outdated, making them non-functional when trying to incorporate into a new project with the latest updates. Keeping the setup minimal should make this a more useful template in the future.
 
 ## Spotify App Setup
 

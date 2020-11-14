@@ -33,6 +33,9 @@ const generateRandomString = (length) => {
 /* Do initial auth redirect */
 exports.handler = async function (event, context) {
   const state = generateRandomString(16);
+
+  // Note that for local development, Chrome will not set the cookie if the
+  // Secure" flag is set
   const cookieString = devMode ? "" : "; Secure; HttpOnly";
   const stateCookie = `${stateKey}=${state}${cookieString}`;
 
@@ -53,8 +56,8 @@ exports.handler = async function (event, context) {
     statusCode: 302, // must be a redirect status code or the client won't be redirected
     headers: {
       Location: authorizationURI,
-      "Cache-Control": "no-cache", // Disable caching of this response
       "Set-Cookie": stateCookie, // sets a cookie @ (key, value)
+      "Cache-Control": "no-cache", // Disable caching of this response
     },
   };
 };

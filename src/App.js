@@ -3,10 +3,15 @@ import { getHashParams } from "./util/auth";
 import logo from "./logo.svg";
 import "./App.css";
 
+/*
+ * The app makes requests to the backend to get authorization for the Spotify Web API
+ * Once authorization is granted, requests can be made to the Spotify API, e.g. retrieving the
+ * user's top tracks
+ */
 function App() {
   const [params, setParams] = useState();
 
-  // when the component mounts, check URL for authentication
+  // when the component mounts, check the URL for authentication
   // data, if it is present, update the parameters state
   useEffect(() => {
     const authData = getHashParams(window.location);
@@ -19,6 +24,7 @@ function App() {
     }
   }, []);
 
+  // get new parameters, using the current refresh token
   const refreshToken = () => {
     return fetch(
       `/.netlify/functions/refresh_token?refresh_token=${params.refresh_token}`
@@ -34,6 +40,7 @@ function App() {
       });
   };
 
+  // clear out the authentication parameters
   const clearTokens = () => {
     setParams(null);
   };
@@ -42,7 +49,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>Spotify Serverless Authorization Code Flow</h1>
+        <h1>Spotify Serverless Auth</h1>
+      </header>
+      <main>
         <div className="List-horiz">
           <a className="App-button" href="/.netlify/functions/login">
             Login with Spotify
@@ -82,7 +91,16 @@ function App() {
             </div>
           </div>
         )}
-      </header>
+      </main>
+      <footer className="App-footer">
+        <a
+          href="https://github.com/JonoMacC/serverless-spotify-auth"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github
+        </a>
+      </footer>
     </div>
   );
 }

@@ -1,8 +1,14 @@
-// enable reading from process.env
+/*
+ * Authorization configuration for Netlify functions
+ * works for local development or with deployed site
+ */
+
+//enable reading from process.env
 require("dotenv").config();
 
-const routerBasePath = `/.netlify/functions`;
-const env = process.env.NODE_ENV || "development";
+// Netlify sets process.env.URL on the deployed site, for local development it will be undefined
+// the build step of netlify-lambda will set process.env.NODE_ENV="production" even on local development
+const env = process.env.URL ? "production" : "development";
 const devMode = env === "development";
 const spotifyURL = "https://accounts.spotify.com";
 const devURL = "http://localhost:3000";
@@ -16,7 +22,7 @@ const clientId = process.env.REACT_APP_CLIENT_ID,
   authorizePath = `${spotifyURL}/authorize?`,
   tokenPath = `${spotifyURL}/api/token`,
   profilePath = `${spotifyURL}/v1/me/`,
-  redirectUri = `${siteUrl}${routerBasePath}/callback`;
+  redirectUri = `${siteUrl}/.netlify/functions/callback`;
 
 module.exports = {
   clientId,

@@ -3,7 +3,6 @@
  * Retrieve a refreshed access token
  */
 
-const querystring = require("querystring");
 const axios = require("axios");
 const { clientId, clientSecret, tokenPath } = require("./utils/auth-config");
 
@@ -22,10 +21,10 @@ exports.handler = async function (event, context) {
         Buffer.from(clientId + ":" + clientSecret).toString("base64"),
       "content-type": "application/x-www-form-urlencoded;charset=utf-8",
     },
-    data: querystring.stringify({
+    params: {
       grant_type: "refresh_token",
       refresh_token: refresh_token,
-    }),
+    },
   };
 
   return axios(authOptions)

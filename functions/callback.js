@@ -5,7 +5,6 @@
  * is not good, redirect the user to an error page
  */
 
-const querystring = require("querystring");
 const axios = require("axios");
 const {
   clientId,
@@ -38,11 +37,11 @@ exports.handler = async function (event, context) {
     const authOptions = {
       method: "post",
       url: tokenPath,
-      data: querystring.stringify({
+      params: {
         code: code,
         redirect_uri: redirectUri,
         grant_type: "authorization_code",
-      }),
+      },
       headers: {
         Authorization:
           "Basic " +

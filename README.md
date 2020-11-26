@@ -10,7 +10,11 @@ Use your Spotify account on the [Spotify developer site](https://developer.spoti
 
 ### Redirect URI for Local Development
 
-http://localhost:3000/.netlify/functions/callback
+http://localhost:8888/.netlify/functions/callback
+
+## Deploy
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JonoMacC/serverless-spotify-auth)
 
 ## Local Development
 
@@ -27,15 +31,16 @@ In the project directory, install the packages:
 
     yarn
 
-Then start the app:
+Set up Netlify CLI if you have not done so.
 
-    yarn start
+    npm install netlify-cli -g
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Login to your Netlify account:
 
-## Deploy
+    ntl login
 
-<br />
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/JonoMacC/serverless-spotify-auth">
-<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />
-</a>
+Start the app:
+
+    ntl dev
+
+Open [http://localhost:8888](http://localhost:8888) to view it in the browser.

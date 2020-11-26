@@ -35,7 +35,7 @@ exports.handler = async function (event, context) {
   const state = generateRandomString(16);
 
   // Note that for local development, Chrome will not set the cookie if the
-  // Secure" flag is set
+  // "Secure" flag is set
   const cookieString = devMode ? "" : "; Secure; HttpOnly";
   const stateCookie = `${stateKey}=${state}${cookieString}`;
 

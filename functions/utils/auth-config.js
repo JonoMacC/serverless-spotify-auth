@@ -3,11 +3,7 @@
  * works for local development or with deployed site
  */
 
-//enable reading from process.env
-require("dotenv").config();
-
 // Netlify sets process.env.URL on the deployed site, for local development it will be undefined
-// the build step of netlify-lambda will set process.env.NODE_ENV="production" even on local development
 const env = process.env.URL ? "production" : "development";
 const devMode = env === "development";
 const spotifyURL = "https://accounts.spotify.com";
